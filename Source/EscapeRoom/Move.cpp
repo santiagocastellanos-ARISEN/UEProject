@@ -1,4 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+
+GE// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Move.h"
@@ -20,6 +21,7 @@ void UMove::BeginPlay()
 	Super::BeginPlay();
 
 	startLocation = GetOwner()->GetActorLocation();
+	SetShouldMove(false);
 
 	// ...
 	
@@ -43,5 +45,23 @@ void UMove::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentT
 
 	}
 	// ...
+}
+
+void UMove::SetShouldMove(bool moveValue)
+{
+	ShouldMove = moveValue;
+	if (ShouldMove)
+	{
+		targetLocation = startLocation + moveOffset;
+	}
+	else
+	{
+		targetLocation = startLocation;
+	}
+}
+
+bool UMove::GetShouldMove() const
+{
+	return ShouldMove;
 }
 

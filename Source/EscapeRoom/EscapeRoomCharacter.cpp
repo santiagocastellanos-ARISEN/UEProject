@@ -59,6 +59,10 @@ void AEscapeRoomCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		// Looking/Aiming
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AEscapeRoomCharacter::LookInput);
 		EnhancedInputComponent->BindAction(MouseLookAction, ETriggerEvent::Triggered, this, &AEscapeRoomCharacter::LookInput);
+
+
+		EnhancedInputComponent->BindAction(Interact, ETriggerEvent::Triggered, this, &AEscapeRoomCharacter::DoInteract);
+
 	}
 	else
 	{
@@ -117,4 +121,10 @@ void AEscapeRoomCharacter::DoJumpEnd()
 {
 	// pass StopJumping to the character
 	StopJumping();
+}
+
+void AEscapeRoomCharacter::DoInteract()
+{
+	UE_LOG(LogTemp, Display, TEXT("U Interact!!!"));
+	GEngine->AddOnScreenDebugMessage(1,5,FColor::Red,TEXT("U Interact!!!!"));
 }

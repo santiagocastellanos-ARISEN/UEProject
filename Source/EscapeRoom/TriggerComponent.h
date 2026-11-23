@@ -30,7 +30,10 @@ public:
 	bool isPressurePlat = false;
 
 	UPROPERTY(VisibleAnywhere)
-	bool isPressurePlate = false;
+	bool isTriggered = false;
+
+	UPROPERTY(VisibleAnywhere)
+	int32 activatorCount = 0;
 
 	UPROPERTY(EditAnywhere)
 	AActor* moveActor;

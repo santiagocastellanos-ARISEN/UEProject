@@ -47,5 +47,7 @@ void ALock::SetIsKeyPlaced(bool value)
 bool ALock::GetIsKeyPlaced() const
 {
 	return isKeyPlaced;
+	//sjsjshsjsh
+
 }
 
